@@ -16,15 +16,20 @@ angular.module('angular-preload-image').directive('preloadImage', ['preLoader', 
         terminal: true,
         priority: 100,
         link: function (scope, element, attrs) {
-            var url = attrs.ngSrc;
+            var firstLoad = true;
             scope.default = attrs.defaultImage || "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wEWEygNWiLqlwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAMSURBVAjXY/j//z8ABf4C/tzMWecAAAAASUVORK5CYII=";
-            attrs.$set('src', scope.default);
-            preLoader(url, function () {
-                attrs.$set('src', url);
-            }, function () {
-                if (attrs.fallbackImage !== undefined) {
-                    attrs.$set('src', attrs.fallbackImage);
+            attrs.$observe('ngSrc', function (url) {
+                if (firstLoad) {
+                    attrs.$set('src', scope.default);
+                    firstLoad = false;
                 }
+                preLoader(url, function () {
+                    attrs.$set('src', url);
+                }, function () {
+                    if (attrs.fallbackImage !== undefined && firstLoad) {
+                        attrs.$set('src', attrs.fallbackImage);
+                    }
+                });
             });
         },
     };
