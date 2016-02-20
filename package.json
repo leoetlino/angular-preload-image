@@ -1,0 +1,19 @@
+{
+  "name": "angular-preload-image",
+  "version": "1.0.0",
+  "description": "Preload images in Angular apps",
+  "main": "angular-preload-image.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoetlino/angular-preload-image.git"
+  },
+  "author": "Léo Lam <leo@leolam.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leoetlino/angular-preload-image/issues"
+  },
+  "homepage": "https://github.com/leoetlino/angular-preload-image#readme"
+}

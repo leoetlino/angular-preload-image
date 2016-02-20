@@ -59,3 +59,5 @@ angular.module('angular-preload-image').directive('preloadBgImage', ['preLoader'
         },
     };
 }]);
+
+module.exports = 'angular-preload-image';

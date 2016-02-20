@@ -2,25 +2,16 @@
 
 A simple AngularJS module to make it easy to pre-load images to prevent the horrible waterfall effect: [Demo](http://revillweb.github.io/angular-preload-image/).
 
-#Installation
-
-##Install with bower
+# Installation
 
 ```
-bower install angular-preload-image
+npm install leoetlino/angular-preload-image
 ```
 
-##Include script files
-
-```html
-<script src="bower_components/angular/angular.min.js"></script>
-<script src="bower_components/angular-preload-image/angular-preload-image.min.js"></script>
-```
-
-##Add module dependency
+You can then require the module.
 
 ```javascript
-angular.module('app', ['angular-preload-image']);
+angular.module("app", require("angular-preload-image")]);
 ```
 
 #Usage
@@ -49,7 +40,7 @@ Check out the [demo](http://revillweb.github.io/angular-preload-image/) for an e
 
 * Ability to know when all pre-loaded images have finished loading within the page
 * Extensive cross browser and device testing + fixes
- 
+
 #Credit
 
 Inspiration taken from Ben Nadel's [post](http://www.bennadel.com/blog/2597-preloading-images-in-angularjs-with-promises.htm) about pre-loading images.
